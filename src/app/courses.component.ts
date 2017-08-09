@@ -17,11 +17,16 @@ export class CoursesComponent {
   title = 'List of Courses';
   courses;
 
+  // constructor() {
+  //   let service = new CoursesService();
+  //   this.courses = service.getCourses();
+  // }
+
+  constructor(service: CoursesService) {
+    this.courses = service.getCourses();
+  }
+
   getTitle() {
     return this.title;
   }
 }
-
-// note: selector: 'courses'  <courses>
-// note: selector: '.courses' <div class="courses">
-// note: selector: '#courses' <div id="courses">
