@@ -5,11 +5,16 @@ import { Component } from '@angular/core';
   template: `
     <h1>Courses</h1>
     <h2>{{ title }}</h2>
-    <h2>{{ getTitle() }}</h2>
+    <ul>
+      <li *ngFor="let course of courses">
+        {{ course }}
+      </li>
+    </ul>
   `
 })
 export class CoursesComponent {
   title = 'List of Courses';
+  courses = ['Course1', 'Course2', 'Course3'];
 
   getTitle() {
     return this.title;
