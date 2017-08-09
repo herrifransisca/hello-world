@@ -4,14 +4,20 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-courses',
   template: `
-    <h2>{{ title }}</h2>              // using interpolation
-    <h2 [textContent]="title"></h2>   // using property binding
+    <img [src]="imageUrl" />                  // using property binding
+    <table>
+      <tr>
+        // <td [colspan]="colSpan"></td>      // Error, because "td" doesn't have a PROPERTY called colspan
+        // solution:
+        <td [attr.colspan]="colSpan"></td>   // using attribute binding
+      </tr>
+    </table>
 
-    <img src="{{ imageUrl }}" />      // using interpolation
-    <img [src]="imageUrl" />          // using property binding
+    // note: "property binding" uses "PROPERTY of DOM"
+    //       "attribute binding" uses "ATTRIBUTE of HTML"
   `
 })
 export class CoursesComponent {
-  title = 'List of Courses';
-  imageUrl = 'http://lorempixel.com/400/200';
+  imageUrl = '';
+  colSpan = 2;
 }
