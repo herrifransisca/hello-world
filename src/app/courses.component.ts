@@ -4,29 +4,14 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-courses',
   template: `
-    <h1>Courses</h1>
-    <h2>{{ title }}</h2>
-    <ul>
-      <li *ngFor="let course of courses">
-        {{ course }}
-      </li>
-    </ul>
+    <h2>{{ title }}</h2>              // using interpolation
+    <h2 [textContent]="title"></h2>   // using property binding
+
+    <img src="{{ imageUrl }}" />      // using interpolation
+    <img [src]="imageUrl" />          // using property binding
   `
 })
 export class CoursesComponent {
   title = 'List of Courses';
-  courses;
-
-  // constructor() {
-  //   let service = new CoursesService();
-  //   this.courses = service.getCourses();
-  // }
-
-  constructor(service: CoursesService) {
-    this.courses = service.getCourses();
-  }
-
-  getTitle() {
-    return this.title;
-  }
+  imageUrl = 'http://lorempixel.com/400/200';
 }
