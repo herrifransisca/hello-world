@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-favorite',
@@ -6,11 +6,14 @@ import { Component, Input } from '@angular/core';
 })
 export class FavoriteComponent {
   @Input('is-favorite') isFavorite: boolean;
-  // here's the lesson: 
-  //    if you're building a reusable components, 
-  //    give your input properties an alias to keep the contract of your component stable.
+  @Output() change = new EventEmitter();
 
   onClick() {
     this.isFavorite = !this.isFavorite;
+    this.change.emit();
   }
 }
+
+// here's the lesson:
+//    if you're building a reusable components,
+//    give your input properties an alias to keep the contract of your component stable.
