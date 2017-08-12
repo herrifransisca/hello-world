@@ -1,11 +1,12 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-favorite',
   templateUrl: './favorite.component.html',
+  inputs: ['isFavorite']
 })
 export class FavoriteComponent {
-  @Input() isFavorite: boolean;
+  isFavorite: boolean;
 
   onClick() {
     this.isFavorite = !this.isFavorite;
