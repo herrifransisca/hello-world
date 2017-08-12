@@ -14,6 +14,6 @@ export class FavoriteComponent {
   }
 }
 
-// here's the lesson:
-//    if you're building a reusable components,
-//    give your input properties an alias to keep the contract of your component stable.
+export interface FavoriteChangedEventArgs {
+  newValue: boolean;
+}
