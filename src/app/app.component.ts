@@ -3,7 +3,8 @@ import { FavoriteChangedEventArgs } from './favorite/favorite.component';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  // templateUrl: './app.component.html',
+  template: '',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
@@ -16,3 +17,6 @@ export class AppComponent {
     console.log('Favorite changed: ', eventArgs);
   }
 }
+
+// mosh recommendation is to use template externally if there more than 5 lines of code
+// choose either "templateUrl or template"
