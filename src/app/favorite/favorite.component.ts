@@ -1,9 +1,10 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-favorite',
   templateUrl: './favorite.component.html',
-  styleUrls: ['./favorite.component.css']
+  styleUrls: ['./favorite.component.css'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class FavoriteComponent {
   @Input('is-favorite') isFavorite: boolean;
@@ -18,3 +19,7 @@ export class FavoriteComponent {
 export interface FavoriteChangedEventArgs {
   newValue: boolean;
 }
+
+// here's the lesson: 
+//    * the default encapsulation is emulated, which emulate the shadow dom
+//    * for 99.9% of the cases, you don't want to change this. 
