@@ -2,12 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-favorite',
-  templateUrl: './favorite.component.html',
-  styles: [
-    `
-
-    `
-  ]
+  templateUrl: './favorite.component.html'
 })
 export class FavoriteComponent {
   @Input('is-favorite') isFavorite: boolean;
