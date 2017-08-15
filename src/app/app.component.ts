@@ -6,4 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  courses;
+
+  onLoadCourses() {
+    this.courses = [
+      { id: 1, name: 'Course 1' },
+      { id: 1, name: 'Course 2' },
+      { id: 1, name: 'Course 3' }
+    ];
+  }
 }
