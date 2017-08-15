@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  canSave = true;
+  // task = {
+  //   title: 'Review applications',
+  //   assignee: {
+  //     name: 'John Smith'
+  //   }
+  // };
+
+  // there is a case that assignee is null (loading.... waiting for server or anything)
+  task = {
+    title: 'Review applications',
+    assignee: {
+      name: null
+    }
+  };
 }

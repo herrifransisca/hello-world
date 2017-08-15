@@ -1,9 +1,9 @@
-<button
-  [ngStyle]="{
-    'backgroundColor': canSave ? 'blue' : 'gray',
-    'color': canSave ? 'white', 'black',
-    fontWeight: canSave ? 'bold' : 'normal'
-  }"
->
-  Save
-</button>
+<!-- <span>{{ task.assignee.name }}</span> -->
+
+<!-- there is a case that assignee is null (loading.... waiting for server or anything) -->
+<!-- one of the solution is: -->
+<!-- <span *ngIf="task.assignee">{{ task.assignee.name }}</span> -->
+
+
+<!-- there is a better way, by using "Save Traversal Operator" -->
+<span>{{ task.assignee?.name }}</span>
