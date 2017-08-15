@@ -16,8 +16,11 @@ export class AppComponent {
     this.courses.push({ id: 4, name: 'Course 4' });
   }
 
-  onRemove(course) {
-    const index = this.courses.indexOf(course);
-    this.courses.splice(index, 1);
+  onChange(course) {
+    // const index = this.courses.indexOf(course);
+    // this.courses[index].name = 'Updated';
+
+    // more cleaner
+    course.name = 'Updated';
   }
 }
