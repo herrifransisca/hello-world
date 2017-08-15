@@ -8,11 +8,15 @@ import { Component } from '@angular/core';
 export class AppComponent {
   courses;
 
-  onLoadCourses() {
+  LoadCourses() {
     this.courses = [
       { id: 1, name: 'Course 1' },
       { id: 1, name: 'Course 2' },
       { id: 1, name: 'Course 3' }
     ];
+  }
+
+  trackCourse(index, course) {
+    return course ? course.id : undefined;
   }
 }
