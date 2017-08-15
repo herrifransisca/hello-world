@@ -1,14 +1,7 @@
-<div *ngIf="courses.length > 0; else noCourses">
-  List of courses
-</div>
-
-<!-- angular rewrite -->
-<ng-template [ngIf]="courses.length > 0">
-  <div>
-    List of courses
-  </div>
-</ng-template>
-
-<ng-template #noCourses>
-  No courses
-</ng-template>
+<button
+  [style.backgroundColor]="canSave ? 'blue' : 'gray'"  
+  [style.color]="canSave ? 'white' : 'black'"
+  [style.fontWeight]="canSave ? 'bold' : 'normal'"
+>
+  Save
+</button>
