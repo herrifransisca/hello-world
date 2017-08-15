@@ -1,6 +1,18 @@
-<span 
+<!-- <span 
   class="glyphicon" 
   [class.glyphicon-star]="isFavorite" 
   [class.glyphicon-star-empty]="!isFavorite" 
   (click)="onClick()"
+></span> -->
+
+<span 
+  class="glyphicon" 
+  [ngClass]="{
+    'glyphicon-star': isFavorite,
+    'glyphicon-star-empty': !isFavorite
+  }" 
+  (click)="onClick()"
 ></span>
+
+<!-- ngClass is an example of "attribute directive", 
+we use it to modify attributes on existing DOM element -->
