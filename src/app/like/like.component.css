@@ -1,7 +1,8 @@
-.like-deeppink {
-  background: deeppink;
+.glyphicon {
+  color: #ccc;
+  cursor: pointer;
 }
 
-.like-gray {
-  background: #ccc;
+.highlighted {
+  color: deeppink;
 }

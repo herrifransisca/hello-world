@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'like',
@@ -6,16 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./like.component.css']
 })
 export class LikeComponent {
-  tweet = {
-    body: 'Here is the body of a tweet...',
-    isLiked: false,
-    likesCount: 0
-  };
+  @Input('likesCount') likesCount: number;
+  @Input('isActive') isActive: boolean;
 
-  constructor() { }
-
-  toggle() {
-    this.tweet.likesCount += this.tweet.isLiked ? -1 : 1;
-    this.tweet.isLiked = !this.tweet.isLiked;
+  onClick() {
+    this.likesCount += this.isActive ? -1 : 1;
+    this.isActive = !this.isActive;
   }
 }
