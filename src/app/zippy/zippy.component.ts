@@ -5,16 +5,13 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './zippy.component.html',
   styleUrls: ['./zippy.component.css']
 })
-export class ZippyComponent implements OnInit {
+export class ZippyComponent {
   @Input() title: string;
-  isContentDisplayed: boolean;
+  isExpanded: boolean;
 
   constructor() { }
 
-  ngOnInit() {
-  }
-
-  onClick() {
-    this.isContentDisplayed = !this.isContentDisplayed;
+  toggle() {
+    this.isExpanded = !this.isExpanded;
   }
 }
