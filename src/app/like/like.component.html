@@ -1,0 +1,12 @@
+<span 
+  (click)="toggle()"
+  class="glyphicon" 
+  [ngClass]="{
+    'glyphicon-heart': tweet.isLiked,
+    'glyphicon-heart-empty': !tweet.isLiked,
+    'like-deeppink': tweet.isLiked,
+    'like-gray': !tweet.isLiked
+  }"
+>
+{{ tweet.likesCount }}
+</span>
