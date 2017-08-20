@@ -55,9 +55,20 @@ ngModelGroup => TIDAK ADA output. -->
       <option *ngFor="let method of contactMethods" [value]="method.id">{{ method.name }}</option>
     </select>
   </div>
+  <div class="radio">
+    <label>
+      <input type="radio" ngModel name="contactMethod" value="1">
+      Email
+    </label>
+  </div>
+  <div class="radio">
+    <label>
+      <input type="radio" ngModel name="contactMethod" value="2">
+      Phone
+    </label>
+  </div>
   <p>
     {{ f.value | json }}
-    {{ contactMethods | json }}
   </p>
   <button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
 </form>
