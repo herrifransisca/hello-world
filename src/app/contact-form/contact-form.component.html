@@ -55,16 +55,10 @@ ngModelGroup => TIDAK ADA output. -->
       <option *ngFor="let method of contactMethods" [value]="method.id">{{ method.name }}</option>
     </select>
   </div>
-  <div class="radio">
+  <div *ngFor="let method of contactMethods" class="radio">
     <label>
-      <input type="radio" ngModel name="contactMethod" value="1">
-      Email
-    </label>
-  </div>
-  <div class="radio">
-    <label>
-      <input type="radio" ngModel name="contactMethod" value="2">
-      Phone
+      <input type="radio" ngModel name="contactMethod" [value]="method.id">
+      {{ method.name }}
     </label>
   </div>
   <p>
