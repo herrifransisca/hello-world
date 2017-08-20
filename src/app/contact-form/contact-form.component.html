@@ -1,3 +1,7 @@
+<!-- perbedaan ngForm & ngModelGroup:
+ngForm => ADA output yaitu: (ngSubmit),
+ngModelGroup => TIDAK ADA output. -->
+
 <form #f="ngForm" (ngSubmit)="submit(f)">
   <div ngModelGroup="contact" #contact="ngModelGroup">
     <div *ngIf="!contact.valid">...</div>
