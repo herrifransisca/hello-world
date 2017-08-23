@@ -14,4 +14,12 @@ export class UsernameValidators {
     //     actualLength: control.value.length
     //   } };
   }
+
+  static mustBeUnique(control: AbstractControl): ValidationErrors | null {
+    setTimeout(() => {
+      if (control.value === 'mosh')
+        return { mustBeUnique: true };
+      return null;
+    }, 2000);
+  }
 }
