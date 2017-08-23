@@ -15,11 +15,14 @@ export class UsernameValidators {
     //   } };
   }
 
-  static mustBeUnique(control: AbstractControl): ValidationErrors | null {
-    setTimeout(() => {
-      if (control.value === 'mosh')
-        return { mustBeUnique: true };
-      return null;
-    }, 2000);
+  static mustBeUnique(control: AbstractControl): Promise<ValidationErrors | null> {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (control.value === 'mosh')
+          resolve({ mustBeUnique: true });
+        else
+          resolve(null);
+      }, 2000);
+    });
   }
 }
