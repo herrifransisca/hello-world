@@ -17,6 +17,7 @@ import { LikeComponent } from './like/like.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 import { NewCourseForm2Component } from './new-course-form-2/new-course-form-2.component';
+import { NewCourseForm3Component } from './new-course-form-3/new-course-form-3.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { NewCourseForm2Component } from './new-course-form-2/new-course-form-2.c
     ContactFormComponent,
     NewCourseFormComponent,
     SignupFormComponent,
-    NewCourseForm2Component
+    NewCourseForm2Component,
+    NewCourseForm3Component
   ],
   imports: [
     BrowserModule,
