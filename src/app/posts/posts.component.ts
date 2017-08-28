@@ -27,4 +27,23 @@ export class PostsComponent {
         this.posts.splice(0, 0, post);
       });
   }
+
+  updatePost(post) {
+    // what's the differece between "patch" & "put"
+    // patch = sebagian property
+    // put = semua property
+
+    // when to use patch and put ?
+    // pertama, check dulu apakah "API" nya support patch apa gak ? 
+    //      kalau di course mosh yang aspnetcore angular, 
+    //      itu gak support patch, support nya "put", karna semua object)
+    // kalau support, pilih patch, karna bisa improve "slight performance"
+    // this.http.patch(this.url, JSON.stringify({ isRead: true }));
+    // this.http.put(this.url, JSON.stringify(post));
+
+    this.http.patch(this.url + '/' + post.id, JSON.stringify({ isRead: true }))
+      .subscribe(response => {
+        console.log(response.json());
+      });
+  }
 }
