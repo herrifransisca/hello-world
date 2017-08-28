@@ -1,3 +1,4 @@
+import { HttpModule } from '@angular/http';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { SummaryPipe } from './summary.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -19,6 +20,7 @@ import { NewCourseFormComponent } from './new-course-form/new-course-form.compon
 import { NewCourseForm2Component } from './new-course-form-2/new-course-form-2.component';
 import { NewCourseForm3Component } from './new-course-form-3/new-course-form-3.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { PostsComponent } from './posts/posts.component';
 
 @NgModule({
   declarations: [
@@ -37,12 +39,14 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     SignupFormComponent,
     NewCourseForm2Component,
     NewCourseForm3Component,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
   providers: [
     CoursesService
