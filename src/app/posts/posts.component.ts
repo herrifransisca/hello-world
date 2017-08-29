@@ -16,7 +16,7 @@ export class PostsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.postService.getPosts()
+    this.postService.getAll()
       .subscribe(
         response => {
           this.posts = response.json();
@@ -27,7 +27,7 @@ export class PostsComponent implements OnInit {
     const post = { title: input.value };
     input.value = '';
 
-    this.postService.createPost(post)
+    this.postService.create(post)
       .subscribe(
         response => {
           post['id'] = response.json().id;
@@ -41,7 +41,7 @@ export class PostsComponent implements OnInit {
   }
 
   updatePost(post) {
-    this.postService.updatePost(post.id)
+    this.postService.update(post.id)
       .subscribe(
         response => {
           console.log(response.json());
@@ -49,7 +49,7 @@ export class PostsComponent implements OnInit {
   }
 
   deletePost(post) {
-    this.postService.deletePost(post.id)
+    this.postService.delete(post.id)
       .subscribe(
         response => {
           const index = this.posts.indexOf(post);
